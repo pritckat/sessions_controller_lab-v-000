@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
     if params[:name] == nil || params[:name].strip == ""
       redirect_to '/login'
     else
-    session[:name] = params[:name]
-    redirect_to '/'
-  end
+      session[:name] = params[:name]
+      redirect_to '/'
+    end
   end
 
   def destroy
-    session.delete :username
+    session.delete :name
   end
 end
